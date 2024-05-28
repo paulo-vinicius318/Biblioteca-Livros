@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Biblioteca Livros</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+
+        <h1>Cadastro de Livros:</h1>
+        
+        <form action="#" 
+        	method="post" 
+        	th:action="@{/cadastro}"
+        	th:object="${livro}">
+			
+			<input placeholder="Nome do Livro" 
+				   	id="nome"
+					th:field ="*{nome}" />
+			<br>
+			<br>		
+			<input placeholder="Autor do Livro" 
+				   	id="autor"
+					th:field ="*{autor}" />
+			<br>
+			<br>		
+			<input placeholder="Gênero do Livro" 
+				   	id="genero"
+					th:field ="*{genero}" />
+			<br>
+			<br>
+			<input placeholder="Editora do Livro" 
+				   	id="editora"
+					th:field ="*{editora}" />
+			<br>
+			<br>
+			<input placeholder="Lançamento do Livro" 
+					id="lancamento"
+					th:field ="*{lancamento}" />
+					 
+			<br>
+			<br>
+			<input type="submit" value="Salvar"/>
+			
+		</form>
+         
+    </body>
+</html>
