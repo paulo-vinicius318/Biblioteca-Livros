@@ -1,0 +1,83 @@
+
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Lista de Clientes</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Biblioteca</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clientes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <h1 class="display-4 text-center">Lista dos Clientes</h1>
+            <h3 class="text-muted">Clientes selecionados:</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+				
+
+				<tr th:each=" cliente : ${clientes}">
+					
+					<a th:href="@{/atualizarCliente/{id}(id=${cliente.id})}">
+						<span th:text="${cliente.nome}"></span>
+						<span th:text="${cliente.cpf}"></span>
+						<span th:text="${cliente.telefone}"></span>
+						<span th:text="${cliente.email}"></span>
+						<p></p>
+					</a>
+					
+				
+				
+				
+                <tbody th:each="cliente : ${clientes}">
+					
+					
+					
+                    
+						<tr>
+                        <td th:text="${cliente.nome}"></td>
+                        <td th:text="${cliente.cpf}"></td>
+                        <td th:text="${cliente.telefone}"></td>
+                        <td th:text="${cliente.email}"></td>
+                    </tr>
+	-
+                </tbody>
+            </table>
+        </div>
+        
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Copyright &copy; 2024 Biblioteca</p>
+                <p class="text-muted">Créditos: Paulo, Gabriel, Pedro e Kauã</p>
+            </div>
+        </footer>
+    </body>
+</html>
